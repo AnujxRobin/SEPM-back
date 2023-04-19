@@ -1,0 +1,307 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%=title%></title>
+    <link rel="stylesheet" href="card.css" />
+    <div class="temp"><%- include("partials/header/header.ejs" );%></div>
+    
+  </head>
+  <body>
+<section class="hero" style="height: 15vh;">
+    <center>
+    <h1 class="ml11">
+        <span class="text-wrapper">
+          <span class="line line1"></span>
+          <span class="letters"><%=title%></span>
+        </span>
+      </h1>
+    </center>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+</section>
+ <section class="card-list">
+  <% companies.forEach(function(company){%>
+      <article class="card">
+        <header class="card-header">
+          <h2>package and requirements here</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus unde fuga debitis rerum, distinctio nostrum, nam vel ad iste quibusdam dolores nihil alias sed praesentium? Ipsum quibusdam minima quo molestiae.</p>
+        </header>
+
+        <div class="card-author">
+          <a class="author-avatar" href="#">
+            <img src= <%=company.logo%> />
+          </a>
+          <svg class="half-circle" viewBox="0 0 106 57">
+            <path d="M102 4c0 27.1-21.9 49-49 49S4 31.1 4 4"></path>
+          </svg>
+
+          <div class="author-name">
+            <%=company.name%>
+          </div>
+        </div>
+        <div class="tags">
+          <a href="/tests/<%=company.name%>">start test</a>
+          <a href=<%=company.about%>>about</a>
+        </div>
+
+      </article>
+      <%})%>
+
+ </section>
+  </body>
+</html>
+
+
+<style>@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&display=swap');
+
+    body {
+        padding: 0;
+        margin: 0;
+        background-color: #17141d;
+        color: white;
+        font-family: 'DM Mono', monospace;
+    }
+    
+    a {
+        text-decoration: none;
+    }
+    
+    .card-list {
+        display: flex;
+        padding: 3rem;
+        overflow-x: scroll;
+        position: relative;
+        left:50px;
+    }
+    .temp:hover{
+    position: absolute;
+    z-index: 2;
+  }
+ 
+    ::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+        display: none
+    }
+    ::-webkit-scrollbar-thumb {
+        background: transparent;
+        border-radius: 10px;
+        box-shadow: inset 2px 2px 2px hsla(0,0%,100%,.25), inset -2px -2px 2px rgba(0,0,0,.25);
+    }
+    
+    ::-webkit-scrollbar-track {
+        background: linear-gradient(90deg,#201c29,#201c29 1px,#17141d 0,#17141d);
+    } 
+    
+    
+    .card {
+        height: 350px;
+        width: 400px;
+        min-width: 250px;
+        padding: 1.5rem;
+        border-radius: 16px;
+        background: #17141d;
+        box-shadow: -1rem 0 3rem #000;
+        display: flex;
+        flex-direction: column;
+        transition: .2s;
+        margin: 0;
+        scroll-snap-align: start;
+        clear: both;
+        position: relative;
+    }
+    
+    .card:focus-within~.card, .card:hover~.card {
+        transform: translateX(130px);
+    }
+    
+    .card:hover {
+        transform: translateY(-1rem);
+    }
+    
+    .card:not(:first-child) {
+        margin-left: -130px;
+    }
+    
+    
+    .card-header {
+        margin-bottom: auto;
+    }
+    
+    .card-header p {
+        font-size: 14px;
+        margin: 0 0 1rem;
+        color: #7a7a8c;
+    }
+    
+    .card-header h2 {
+        font-size: 20px;
+        margin: .25rem 0 auto;
+        text-decoration: none;
+        color: inherit;
+        border: 0;
+        display: inline-block;
+        cursor: pointer;
+    }
+    
+    .card-header h2:hover {
+        background: linear-gradient(90deg,#ff8a00,#e52e71);
+        text-shadow: none;
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+    }
+    
+    .card-author {
+        margin: 3rem 0 0;
+        display: grid;
+        grid-template-columns: 75px 1fr;
+        align-items: center;
+        position: relative;
+    }
+    
+    .author-avatar {
+        grid-area: auto;
+        align-self: start;
+        position: relative;
+        box-sizing: border-box;
+    }
+    
+    .author-avatar img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: block;
+        overflow: hidden;
+        margin: 16px 10px;
+    }
+    
+    .author-name {
+        grid-area: auto;
+        box-sizing: border-box;
+    }
+    
+    .author-name-prefix {
+        font-style: normal;
+        font-weight: 700;
+        color: #7a7a8c;
+    }
+    
+    .half-circle {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 60px;
+        height: 48px;
+        fill: none;
+        stroke: #ff8a00;
+        stroke-width: 8;
+        stroke-linecap: round;
+        pointer-events: none;
+    }
+    
+    .tags {
+        margin: 1rem 0 2rem;
+        padding: .5rem 0 1rem;
+        line-height: 2;
+        margin-bottom: 0;
+    }
+    
+    .tags a {
+        font-style: normal;
+        font-weight: 700;
+        font-size: .5rem;
+        color: #7a7a8c;
+        text-transform: uppercase;
+        font-size: .66rem;
+        border: 3px solid #28242f;
+        border-radius: 2rem;
+        padding: .2rem .85rem .25rem;
+        position: relative;
+    }
+    
+    .tags a:hover {
+        background: linear-gradient(90deg,#ff8a00,#e52e71);
+        text-shadow: none;
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+        -webkit-box-decoration-break: clone;
+        background-clip: text;
+        border-color: white;
+    }
+    .ml11 {
+  font-weight: 700;
+  font-size: 3.5em;
+}
+
+.ml11 .text-wrapper {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.1em;
+  padding-right: 0.05em;
+  padding-bottom: 0.15em;
+}
+
+.ml11 .line {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 3px;
+  background-color: #fff;
+  transform-origin: 0 50%;
+}
+
+.ml11 .line1 { 
+  top: 0; 
+  left: 0;
+}
+
+.ml11 .letter {
+  display: inline-block;
+  line-height: 1em;
+}
+.hero h1{
+  margin-top: 10%;
+}
+</style>
+<script>
+// Wrap every letter in a span
+var textWrapper = document.querySelector('.ml11 .letters');
+textWrapper.innerHTML = textWrapper.textContent.replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>");
+
+anime.timeline({loop: false})
+  .add({
+    targets: '.ml11 .line',
+    scaleY: [0,1],
+    opacity: [0.5,1],
+    easing: "easeOutExpo",
+    duration: 800,
+  })
+  .add({
+    targets: '.ml11 .line',
+    translateX: [0, document.querySelector('.ml11 .letters').getBoundingClientRect().width + 10],
+    easing: "easeOutExpo",
+    duration: 800,
+    delay: 100
+  }).add({
+    targets: '.ml11 .letter',
+    opacity: [0,1],
+    easing: "easeOutExpo",
+    duration: 700,
+    offset: '-=775',
+    delay: (el, i) => 34 * (i+1)
+  }).add({
+    targets: '.ml11',
+    opacity: 1,
+  })
+  .add({
+    targets: '.ml11 .line',
+    opacity: 0,
+    easing: "easeOutExpo",
+    duration: 600
+  });
+</script>

@@ -1,0 +1,50 @@
+!
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mcq</title>
+ 
+        <%- include("partials/header/header.ejs" );%>
+  </head>
+  <body>
+    <form>
+    <%questions.forEach(function(question){%>
+      <label><%=question.text%></label>
+      <label><input type="radio" name="<%=question.number%>" value="<%= question.option1 %>" /> <%= question.option1 %> </label>
+      <label><input type="radio" name="<%=question.number%>" value="<%= question.option2 %>" /> <%= question.option2 %> </label>
+      <label><input type="radio" name="<%=question.number%>" value="<%= question.option3 %>" /> <%= question.option3 %> </label>
+    <label><input type="radio" name="<%=question.number%>" value="<%= question.option4 %>" /> <%= question.option4 %> </label>
+
+      <%})%>
+    </form>
+  </body>
+  <style>
+    body {
+   font-family: Arial, sans-serif;
+   margin: 0;
+   padding: 0;
+   background-color: rgb(23,20,29);
+   color: #88ff88;
+ }
+
+ form {
+   max-width: 600px;
+   margin: 0 auto;
+   padding: 20px;
+   border-radius: 5px;
+ }
+
+ label {
+   display: block;
+   margin-bottom: 10px;
+ }
+
+ input[type="radio"] {
+   margin-right: 10px;
+ }
+</style>
+</html>

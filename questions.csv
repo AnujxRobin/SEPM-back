@@ -1,0 +1,21 @@
+no., question, option1, option2, option3, option4, correct answer,
+1, What is the minimum number of comparisons required to find the largest element in an array of N elements?, N-1, N, N/2, logN, N-1
+2, What is the minimum number of comparisons to find the 2nd largest element provided you have found the largest element?, logN - 1, N-1, N, N + logN - 2, logN - 1
+3, In Array Data Structure, what is the biggest limitation?, Pre-defined array size, Slow access time, Slow deletion operation, No random access, Pre-defined array size
+4, In Dynamic Array, what is the worst case Time Complexity of inserting a new element?, O(N), O(1), O(logN), O(N^2), O(N)
+5, The height of a BST is given as h. Consider the height of the tree as the no. of edges in the longest path from root to the leaf. The maximum no. of nodes possible in the tree is?, a) 2h-1 -1, b) 2h+1 -1, c) 2h +1, d) 2h-1 +1, 2h+1 -1
+6, The no of external nodes in a full binary tree with n internal nodes is?, a) n, b) n+1, c) 2n, d) 2n + 1, n+1
+7, The difference between the external path length and the internal path length of a binary tree with n internal nodes is?, a) 1, b) n, c) n + 1, d) 2n, 2n
+8, Which of the following is a feature of DBMS?, a) Minimum Duplication and Redundancy of Data, b) High Level of Security, c) Single-user Access only, d) Support ACID Property, b) High Level of Security
+9, Which of the following is known as a set of entities of the same type that share same properties, or attributes?, a) Relation set, b) Tuples, c) Entity set, d) Entity Relation model, c) Entity set
+10, The values appearing in given attributes of any tuple in the referencing relation must likewise occur in specified attributes of at least one tuple in the referenced relation, according to _____________________ integrity constraint., a) Referential, b) Primary, c) Referencing, d) Specific, a) Referential
+11, The DBMS acts as an interface between ________________ and ________________ of an enterprise-class system., a) Data and the DBMS, b) Application and SQL, c) Database application and the database, d) The user and the software, c) Database application and the database
+12, The ability to query data, as well as insert, delete, and alter tuples, is offered by ____________, a) TCL (Transaction Control Language), b) DCL (Data Control Language), c) DDL (Data Definition Language), d) DML (Data Manipulation Language), d) DML (Data Manipulation Language)
+13, How many types of cloud computing are there?, 2, 3, 4, 5, 3
+14, Do traditional IT models provide flexibility?, YES, NO, NO
+15, What is the region in AWS?, A region is a geographical area or collection of data centers., A region is an isolated logical data center, A region is the end-points for AWS., A
+16,What will be the output of the following code snippet?,"5","4","6","3",A
+17,What will be the output of the following code snippet?,"3","4","0","2",B
+18,What will be the value of “sum” after the following code snippet terminates?,"10","20","5","1",A
+19,The FCFS algorithm is particularly troublesome for ____________,"operating systems","multiprocessor systems","time sharing systems","multiprogramming systems",C
+20,A deadlock avoidance algorithm dynamically examines the __________ to ensure that a circular wait condition can never exist.,"operating system","resources","system storage state","resource allocation state",D
